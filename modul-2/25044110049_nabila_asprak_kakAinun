@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="soal modul 2 no.5"/>
+        <attribute name="authors" value="nabil"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-10-07 12:49:54 PM"/>
+        <attribute name="created" value="bmFiaWw7TkFCSUxBX0xBS0FSOzIwMjUtMTAtMDc7MTE6MDQ6MTAgQU07MjY1Mg=="/>
+        <attribute name="edited" value="bmFiaWw7TkFCSUxBX0xBS0FSOzIwMjUtMTAtMDc7MTI6NDk6NTQgUE07MTsyNzkz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nilai, huruf, status, kehadiran" type="Integer" array="False" size=""/>
+            <output expression="&quot; masukkan nilai&quot;" newline="True"/>
+            <input variable="Nilai"/>
+            <output expression="&quot; kehadiran&quot;" newline="True"/>
+            <input variable="Kehadiran"/>
+            <if expression="nilai &gt;= 85 and nilai &lt;=100 and kehadiran &gt;= 90 and kehadiran &lt;= 100">
+                <then>
+                    <output expression="&quot;pujian&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="nilai &gt; 85">
+                        <then>
+                            <output expression="&quot;A&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="nilai &gt;= 70 and nilai &gt;=84">
+                                <then>
+                                    <output expression="&quot;B&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="nilai &gt;= 60 and nilai &gt;=69">
+                                        <then>
+                                            <output expression="&quot;C&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="nilai &gt;= 50 and nilai &gt;=59">
+                                                <then>
+                                                    <output expression="&quot;D&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <output expression="&quot;E&quot;" newline="True"/>
+                                                </else>
+                                            </if>
+                                            <if expression="&quot;nilai&quot; &gt;=85 and &quot;kehadiran&quot; &gt;=90">
+                                                <then>
+                                                    <output expression="&quot;Lulus dangan ujian&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <output expression="&quot;Lulus&quot;" newline="True"/>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+  # soal no 1
+print(" masukkan nilai")
+nilai = int(input())
+print(" kehadiran")
+kehadiran = int(input())
+if nilai >= 85 and nilai <= 100 and kehadiran >= 90 and kehadiran <= 100:
+    print("pujian")
+else:
+    if nilai > 85:
+        print("A")
+    else:
+        if nilai >= 70 and nilai >= 84:
+            print("B")
+        else:
+            if nilai >= 60 and nilai >= 69:
+                print("C")
+            else:
+                if nilai >= 50 and nilai >= 59:
+                    print("D")
+                else:
+                    print("E")
+                if nilai >= 85 and kehadiran >= 90:
+                    print("Lulus dangan pujian")
+                else:
+                    print("Lulus")
+
+#soal N0.2
+# program menghitung harga tiket bioskop dengan berbagai diskon
+#harga normal
+harga_normal = 50000
+# input data dari pengguna
+usia = int(input("masukan usia anda: "))
+pelajar = input("apakah anda pelajar SMA dengan kartu? (ya/tidak): "). lower()
+hari = input("masukkan hari (contoh: senin, selasa, ...): "). lower()
+# inisialisasi diskon
+diskon = 0
+#cek kondisi dikon 
+if usia < 12: 
+    diskon = 50
+if pelajar == "ya" and diskon < 30: 
+    diskon = 30
+if hari == "selasa" and diskon < 20:
+    diskon = 20
+# hitung harga akhir
+harga_akhir = harga_normal - (harga_normal * diskon / 100)
+# output hasil 
+print("\n=== HASIL ===")
+print(f"diskon yang didapat: {diskon}%")
+print(f"harga tiket yang harus dibayar: Rp {int(harga_akhir)}")
+
+
+# soal No.3
+# program menghitung biaya parkir di mall
+
+# input lama parkir dan status VIP
+lama_parkir = int(input("masukan lama parkir (jam): "))
+status_VIP = input("apakah anda member VIP? (ya/tidak):" ).lower()
+
+# inisialisasi variabel tarif
+tarif_awal = 5000   # untuk 2 jam pertama
+tarif_per_jam = 3000   # untuk setian jam bberikutnya 
+maksimal_tarif = 2000   # batas maksimal per hari 
+
+# logika penentuan biaya 
+if status_VIP == "ya":
+    total = 0 
+else :
+    total = tarif_awal + (lama_parkir - 2) * tarif_per_jam
+    if total > maksimal_tarif:
+        total = maksimal_tarif
+
+# output hasil
+print("\n===== HASIL PERHITUNGAN =====")
+print(f"lama parkir   : {lama_parkir} jam ")
+print(f"status VIP   : {status_VIP.capitalize()}")
+print(f"total biaya   : RP{total:,}")
+
+
+        </body>
+    </function>
+</flowgorithm>
+
